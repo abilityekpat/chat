@@ -19,11 +19,12 @@ class _SplashscreenState extends State<Splashscreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Image.asset(
-        AppImages.chat1,
-        width: 100.w,
-        height: 100.h,
-      )),
+        child: Image.asset(
+          AppImages.chat,
+          width: 100.w,
+          height: 100.h,
+        ),
+      ),
     );
   }
 
