@@ -7,10 +7,11 @@ class AppColors {
   static const Color textGrey = Color(0xff585865);
   static const Color greyColor = Color(0xffACACB2);
   static const Color transparentColor = Colors.transparent;
+  static const primaryColor = Color.fromARGB(255, 8, 8, 161);
 
   static const Color redColor = Colors.red;
   static const stroke = Color(0xFF1E1E1E);
-  static const lightpurple = Color(0xFFC4CEF2);
+
   static const lightgreen = Color(0xFFD7F6D4);
   static const lightgreen2 = Color(0xFFF2FFF1);
   static const green = Color(0xFF039F00);
