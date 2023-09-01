@@ -46,7 +46,7 @@ class _OnboardingState extends State<Onboarding> {
                       "Skip",
                       style: TextStyle(
                         fontSize: 18,
-                        color: Color.fromARGB(255, 173, 170, 170),
+                        color: Colors.black,
                         //
                       ),
                     ),

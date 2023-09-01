@@ -2,6 +2,7 @@ import 'package:chat/src/core/shared/resources/app_image.dart';
 import 'package:chat/src/core/shared/widgets/custom_buttons.dart';
 import 'package:chat/src/core/shared/widgets/text_field.dart';
 import 'package:chat/src/presentation/auth/sign_up.dart';
+import 'package:chat/src/presentation/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -85,7 +86,12 @@ class _SignInState extends State<SignIn> {
 
                 // sign in labelLarge
                 MyButton(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePage()));
+                  },
                   buttonText: "Sign In",
                 ),
                 const Spacer(),
