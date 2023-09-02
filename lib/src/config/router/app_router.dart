@@ -2,7 +2,7 @@ import 'package:chat/src/config/keys/routes.dart';
 import 'package:chat/src/presentation/onboarding/view/onboarding.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../presentation/onboarding/splashscreen.dart';
+import '../../presentation/onboarding/view/splashscreen.dart';
 
 GoRouter router() => GoRouter(routes: [
       GoRoute(

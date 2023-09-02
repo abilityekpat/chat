@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sizer/flutter_sizer.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/shared/resources/app_image.dart';
+import '../../../core/shared/resources/app_image.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});

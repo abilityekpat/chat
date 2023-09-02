@@ -1,4 +1,4 @@
-import 'package:chat/src/presentation/auth/sign_up.dart';
+import 'package:chat/src/presentation/auth/views/sign_up.dart';
 import 'package:chat/src/presentation/onboarding/widgets/onboarding1.dart';
 import 'package:chat/src/presentation/onboarding/widgets/onboarding2.dart';
 import 'package:chat/src/presentation/onboarding/widgets/onboarding3.dart';
