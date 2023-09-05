@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.chat),
-              label: 'Calls',
+              label: 'Chat',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.contacts),

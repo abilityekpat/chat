@@ -16,7 +16,7 @@ class _ChatState extends State<Chat> {
           backgroundColor: AppColors.primaryColor,
           automaticallyImplyLeading: false,
           title: const Text(
-            'Calls',
+            'Chat',
             style: TextStyle(
               color: AppColors.white,
               fontWeight: FontWeight.bold,
