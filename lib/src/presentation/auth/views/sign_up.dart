@@ -2,6 +2,7 @@ import 'package:chat/src/core/shared/resources/app_image.dart';
 import 'package:chat/src/core/shared/widgets/custom_buttons.dart';
 import 'package:chat/src/core/shared/widgets/loader.dart';
 import 'package:chat/src/core/shared/widgets/text_field.dart';
+import 'package:chat/src/presentation/auth/strings.dart';
 import 'package:chat/src/presentation/auth/views/sign_in.dart';
 import 'package:chat/src/presentation/home/views/home_page.dart';
 import 'package:chat/src/services/auth_service.dart';
@@ -77,11 +78,23 @@ class _SignUpState extends State<SignUp> {
                       MyTextField(
                         controller: emailController,
                         hintText: "Email",
+                        errorText: emailError,
                         obscureText: false,
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your email';
-                          }
+                          setState(() {
+                            if (value!.length >= 8) {
+                              if (RegExp(
+                                      r'^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$')
+                                  .hasMatch(value)) {
+                                emailError = null;
+                              } else {
+                                emailError = 'Invalid email format';
+                              }
+                            } else {
+                              emailError =
+                                  'Email should be at least 8 characters long';
+                            }
+                          });
                           return null;
                         },
                       ),
@@ -94,8 +107,10 @@ class _SignUpState extends State<SignUp> {
                         hintText: "Password",
                         obscureText: true,
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your password';
+                          if (value == null ||
+                              value.isEmpty ||
+                              value.length < 8) {
+                            return 'Password must be minimum of 8 characters';
                           }
                           return null;
                         },
@@ -110,8 +125,10 @@ class _SignUpState extends State<SignUp> {
                         hintText: "Comfirm Password",
                         obscureText: true,
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your password';
+                          if (value == null ||
+                              value.isEmpty ||
+                              value.length < 8) {
+                            return 'Password must be minimum of 8 characters';
                           }
                           return null;
                         },

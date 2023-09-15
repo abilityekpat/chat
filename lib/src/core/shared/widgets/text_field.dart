@@ -5,6 +5,8 @@ class MyTextField extends StatelessWidget {
   final String hintText;
   final bool obscureText;
   String? Function(String?)? validator;
+  String? Function(String?)? onChange;
+  final String? errorText;
 
   MyTextField({
     super.key,
@@ -12,6 +14,8 @@ class MyTextField extends StatelessWidget {
     required this.hintText,
     required this.obscureText,
     this.validator,
+    this.onChange,
+    this.errorText,
   });
 
   @override
@@ -19,10 +23,12 @@ class MyTextField extends StatelessWidget {
     return SizedBox(
       height: 60,
       child: TextFormField(
+        keyboardType: TextInputType.emailAddress,
         validator: validator,
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
+          errorText: errorText,
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(20),
               borderSide: const BorderSide(color: Colors.white)),
@@ -39,3 +45,29 @@ class MyTextField extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+// TextFormField(
+//             controller: _emailController,
+//             onChanged: (value) {
+//               setState(() {
+//                 if (value.length >= 8) {
+//                   if (RegExp(r'^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$').hasMatch(value)) {
+//                     emailError = null;
+//                   } else {
+//                     emailError = 'Invalid email format';
+//                   }
+//                 } else {
+//                   emailError = 'Email should be at least 8 characters long';
+//                 }
+//               });
+//             },
+//             keyboardType: TextInputType.emailAddress,
+//             decoration: InputDecoration(
+//               labelText: 'Email',
+//               errorText: emailError,
+//             ),
+//           ),
